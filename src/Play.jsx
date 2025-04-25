@@ -5,7 +5,7 @@ import SelectBg from "./SelectBg";
 import { useState } from "react";
 import Scene2 from "./Scene2";
 import Scene1 from "./scene1";
-import { XR, createXRStore } from '@react-three/xr'
+import { XR, createXRStore, Controllers, Hands } from '@react-three/xr'
 
 const store = createXRStore()
 
@@ -51,6 +51,8 @@ export default function Play() {
                         <Box onPointerDown={handleTele} position={[-10, 10, 10]} args={[3, 3, 3]}>
                             <meshLambertMaterial attach="material" color="red" />
                         </Box>
+                        <Controllers />
+                        <Hands />
                         <OrbitControls makeDefault />
                         {/* <axesHelper args={[150]} /> */}
                     </XR>
